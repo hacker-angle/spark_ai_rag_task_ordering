@@ -1,0 +1,49 @@
+'''
+声明:代码由hacker_angle(吴明易)所写，未经允许不可转载，二开，用于商业用途。所有权归和最终解释权归hacker_angle所有，违者付法律责任!
+'''
+代码结构:
+    documents/
+        存放训练数据，训练完里面文件尽量不要删除，
+    lib/
+        1.config.py:
+            appid,api_secret,api_key:从科大讯飞星火大模型官网获取(要在config.py里面踢死你)
+            Spark_lite,domain_lite,Spark_deepthink,domain_dt,Spark_Ultra,domain_Ultra:科大讯飞v2接口(不用改)，不
+        2.chat_spark_api.py:自研对接api(不用管)
+        3.chroma_db_manager.py:对接向量数据库(不用管)
+    /
+        1.train.py :python train.py 即可训练documents下文件到模型
+        2.models.py :RAG核心实现
+        3.AIfinal.py:
+            食用方法:
+                (1))创建实例，初始化时将任务json带入:test = AIchangetimetable(json_input)
+                (2))test具有proccess_main傻瓜式函数，输出jsonout(json，AI处理后的新任务顺序)，reason(str,这么排的理由)，例如:jsonout, reason = test.proccess_main()
+        4.requirements.txt:
+            pip install -r requirements.txt,一键部署环境。
+            
+以上都是简介，想直接食用看这:
+1.在lib/config.py里面填入自己的科大讯飞appid,api_secret,api_key
+2.在项目根目录创建代码文件，然后
+from AIfinal impory *
+json_input = {
+        "task1": "写数学作业",
+        "task2": "开编程会议",
+        "task3": "写代码",
+        "task4": "电竞",
+        "task5": "写物理作业",
+        "task6": "写语文作业",
+        "task7": "写英语作业",
+    }
+print("传入json",json_input)
+test = AIchangetimetable(json_input)
+jsonout, reason = test.proccess_main()
+print("json版安排:", jsonout)
+print("原因:", reason)
+del test
+就能食用了
+
+注意:
+1.个别人的环境，运行报错Failed to send telemetry event clientStartEvent，属于正常现象，忽略这个错误信息即可!
+2.开放者环境使用的是ubuntu22.04LTS,其他环境未验证是否可以正常运行!
+
+#######记得给github上hacker-angle,zhidunwangange用户，点个star哦#############
+                                                  timestamp:202508201559
