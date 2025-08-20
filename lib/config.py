@@ -1,0 +1,9 @@
+appid=your_appid
+api_secret=your_api_secret
+api_key=your_api_key
+Spark_lite = "wss://spark-api.xf-yun.com/v1.1/chat"
+domain_lite = "lite"
+Spark_deepthink = "wss://spark-api.xf-yun.com/v1/x1"
+domain_dt = "x1"
+Spark_Ultra = "wss://spark-api.xf-yun.com/v4.0/chat"
+domain_Ultra = "4.0Ultra"
