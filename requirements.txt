@@ -1,0 +1,8 @@
+tqdm==4.67.1
+chromadb==1.0.7
+typing_extensions==4.13.2
+datetime
+websocket-client==1.8.0
+PyPDF2==3.0.1
+python-docx==1.1.2
+spark_ai_python
