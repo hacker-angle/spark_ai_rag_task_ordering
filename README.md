@@ -54,7 +54,7 @@
 ### 📦 安装 & 运行
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/hacker-anglr/spark-ai-rag-task-ordering.git
+git clone https://github.com/hacker-angle/spark-ai-rag-task-ordering.git
 cd spark-ai-rag-task-ordering
 
 # 2. 安装依赖
